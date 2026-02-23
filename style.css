@@ -1,0 +1,135 @@
+/* ── Reset & base ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
+  color: #1a202c;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Layout container ─────────────────────────────────────── */
+.container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+  padding: 2.5rem 3rem;
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #e55a00;
+}
+
+/* ── Stat cards ───────────────────────────────────────────── */
+.stats {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: #fff8f0;
+  border: 2px solid #ffd7b5;
+  border-radius: 12px;
+  padding: 1rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  flex: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #718096;
+  margin-bottom: 0.4rem;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #e55a00;
+  line-height: 1;
+}
+
+.stat-unit {
+  font-size: 0.75rem;
+  color: #a0aec0;
+  margin-top: 0.2rem;
+}
+
+/* ── Check-in button ──────────────────────────────────────── */
+.checkin-section {
+  margin-bottom: 1.5rem;
+}
+
+.checkin-btn {
+  background: #e55a00;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.85rem 2.5rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.checkin-btn:hover:not(:disabled) {
+  background: #cc4f00;
+}
+
+.checkin-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.checkin-btn:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+}
+
+/* ── Status message ───────────────────────────────────────── */
+.checkin-msg {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  min-height: 1.4em;
+  color: #2d7a2d;
+}
+
+.checkin-msg.error {
+  color: #c53030;
+}
+
+/* ── Last check-in ────────────────────────────────────────── */
+.last-checkin {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+/* ── Streak animation ─────────────────────────────────────── */
+@keyframes popIn {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+.stat-value.pop {
+  animation: popIn 0.35s ease;
+}

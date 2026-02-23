@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Streak Counter – Tests</title>
+    <style>
+      body { font-family: monospace; padding: 2rem; background: #1a1a2e; color: #e0e0e0; }
+      h1 { color: #ffd700; margin-bottom: 1.5rem; }
+      .suite { margin: 1rem 0; }
+      .suite-name { font-weight: bold; color: #90cdf4; margin-bottom: 0.3rem; }
+      .pass { color: #68d391; }
+      .fail { color: #fc8181; }
+      .summary { margin-top: 1.5rem; font-size: 1.1rem; border-top: 1px solid #444; padding-top: 1rem; }
+      .summary.all-pass { color: #68d391; }
+      .summary.has-fail { color: #fc8181; }
+    </style>
+  </head>
+  <body>
+    <h1>🧪 Streak Counter Tests</h1>
+    <div id="output"></div>
+
+    <script src="streak.js"></script>
+    <script src="streak.test.js"></script>
+  </body>
+</html>

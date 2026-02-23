@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Streak Counter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🔥 Streak Counter</h1>
+
+      <div class="stats">
+        <div class="stat-card">
+          <span class="stat-label">Current Streak</span>
+          <span class="stat-value" id="current-streak">0</span>
+          <span class="stat-unit">days</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Longest Streak</span>
+          <span class="stat-value" id="longest-streak">0</span>
+          <span class="stat-unit">days</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Total Check-ins</span>
+          <span class="stat-value" id="total-checkins">0</span>
+          <span class="stat-unit">days</span>
+        </div>
+      </div>
+
+      <div class="checkin-section">
+        <button id="checkin-btn" class="checkin-btn">Check In Today</button>
+        <p id="checkin-msg" class="checkin-msg" aria-live="polite"></p>
+      </div>
+
+      <div class="last-checkin">
+        <span>Last check-in: </span>
+        <span id="last-checkin-date">Never</span>
+      </div>
+    </div>
+
+    <script src="streak.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
