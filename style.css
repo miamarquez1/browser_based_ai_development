@@ -75,46 +75,12 @@ h1 {
   margin-top: 0.2rem;
 }
 
-/* ── Check-in button ──────────────────────────────────────── */
-.checkin-section {
-  margin-bottom: 1.5rem;
-}
-
-.checkin-btn {
-  background: #e55a00;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: 0.85rem 2.5rem;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
-}
-
-.checkin-btn:hover:not(:disabled) {
-  background: #cc4f00;
-}
-
-.checkin-btn:active:not(:disabled) {
-  transform: scale(0.97);
-}
-
-.checkin-btn:disabled {
-  background: #cbd5e0;
-  cursor: not-allowed;
-}
-
-/* ── Status message ───────────────────────────────────────── */
-.checkin-msg {
-  margin-top: 0.75rem;
+/* ── Visit status message ─────────────────────────────────── */
+.visit-msg {
   font-size: 0.95rem;
   min-height: 1.4em;
   color: #2d7a2d;
-}
-
-.checkin-msg.error {
-  color: #c53030;
+  margin-bottom: 1.5rem;
 }
 
 /* ── Last check-in ────────────────────────────────────────── */

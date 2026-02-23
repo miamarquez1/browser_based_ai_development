@@ -2,15 +2,13 @@
  * app.js – Wires the StreakCounter model to the DOM.
  *
  * Responsibilities:
+ *   • Automatically record a visit when the page loads
  *   • Render current stats on page load
- *   • Handle the "Check In Today" button
- *   • Disable the button when the user has already checked in today
- *   • Play a brief animation when stats update
+ *   • Play a brief animation when a new day's visit is recorded
  */
 
 (function () {
-  const checkinBtn = document.getElementById('checkin-btn');
-  const checkinMsg = document.getElementById('checkin-msg');
+  const visitMsgEl = document.getElementById('visit-msg');
   const currentStreakEl = document.getElementById('current-streak');
   const longestStreakEl = document.getElementById('longest-streak');
   const totalCheckinsEl = document.getElementById('total-checkins');
@@ -50,39 +48,22 @@
     }
   }
 
-  /** Updates the check-in button based on whether the user already checked in today. */
-  function updateButton(state) {
-    const checkedInToday = state.lastCheckinDate === StreakCounter.today();
-    checkinBtn.disabled = checkedInToday;
-    checkinBtn.textContent = checkedInToday ? '✅ Checked In Today' : 'Check In Today';
-  }
-
-  /** Initialises the UI on page load. */
+  /** Initialises the UI: records today's visit automatically, then renders stats. */
   function initializeUI() {
-    const state = StreakCounter.getState();
-    renderState(state, false);
-    updateButton(state);
-  }
-
-  /** Handles the check-in button click. */
-  checkinBtn.addEventListener('click', () => {
     const { state, alreadyCheckedIn } = StreakCounter.checkIn();
 
     renderState(state, !alreadyCheckedIn);
-    updateButton(state);
-
-    checkinMsg.className = 'checkin-msg';
 
     if (alreadyCheckedIn) {
-      checkinMsg.classList.add('error');
-      checkinMsg.textContent = "You've already checked in today. Come back tomorrow! 🗓";
+      visitMsgEl.textContent = `🔥 ${state.currentStreak}-day streak - visit already counted for today!`;
     } else {
-      checkinMsg.textContent =
+      visitMsgEl.textContent =
         state.currentStreak > 1
-          ? `🔥 ${state.currentStreak}-day streak! Keep it up!`
-          : '✅ Check-in recorded! Start your streak!';
+          ? `🔥 ${state.currentStreak}-day streak! Keep coming back!`
+          : '✅ Visit recorded! Start your streak by coming back tomorrow!';
     }
-  });
+  }
 
   initializeUI();
 })();
+
