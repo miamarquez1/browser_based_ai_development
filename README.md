@@ -6,38 +6,40 @@ A browser-based Streak Counter app — no frameworks, no build tools, just HTML 
 
 You don't need to install anything. Follow the steps below.
 
-### 1. Get the code onto your laptop
-
-**Option A — Clone with Git** (recommended if you have Git installed):
+### 1. Clone the repo
 
 ```bash
 git clone https://github.com/miamarquez1/browser_based_ai_development.git
 cd browser_based_ai_development
 ```
 
-**Option B — Download as a ZIP** (no Git required):
+### 2. Switch to the project branch
 
-1. Go to <https://github.com/miamarquez1/browser_based_ai_development>
-2. Click the green **Code** button → **Download ZIP**
-3. Unzip the downloaded file anywhere on your laptop
+The project files live on the `copilot/add-streak-counter-feature` branch while the PR is open. After cloning, switch to it:
 
-### 2. Open the app in your browser
+```bash
+git checkout copilot/add-streak-counter-feature
+```
 
-Inside the folder you just cloned or unzipped, navigate to:
+You should now see a `browser_based_ai_development/` folder containing `index.html` and `style.css`.
+
+> **Once this PR is merged into `main`**, step 2 is no longer needed — the files will be on `main` and visible immediately after cloning.
+
+### 3. Open the app in your browser
+
+Inside the repo folder, navigate to:
 
 ```
 browser_based_ai_development/index.html
 ```
 
-Double-click `index.html` — it will open directly in your default web browser. No server or install needed.
+Double-click `index.html` — it opens directly in your default web browser. No server or install needed.
 
-> **Tip:** If you'd prefer to use a local server (e.g. to avoid any browser restrictions on local files), run this in your terminal from the repo root:
+> **Optional local server:** run the following from the repo root, then visit <http://localhost:8080/browser_based_ai_development/>
 >
 > ```bash
 > python3 -m http.server 8080
 > ```
->
-> Then visit <http://localhost:8080/browser_based_ai_development/> in your browser.
 
 ## Project structure
 
