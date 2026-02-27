@@ -1,6 +1,6 @@
 # browser_based_ai_development
 
-A browser-based Streak Counter app — no frameworks, no build tools, just HTML and CSS (with JavaScript added in later steps).
+A browser-based Streak Counter app 
 
 ## How to open the project locally
 
