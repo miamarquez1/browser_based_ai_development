@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Streak Counter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="streak-hero" aria-label="Current streak">
+        <span class="hero-flame" aria-hidden="true">🔥</span>
+        <h1 class="hero-title">
+          <span id="current-streak">1</span> day Streak! Keep the Wheel Spinning
+        </h1>
+      </section>
+
+      <section class="week-strip" aria-label="Weekly streak progress">
+        <div class="week-day" data-day="M">
+          <span class="day-label">M</span>
+          <span class="day-mark" aria-hidden="true">●</span>
+        </div>
+        <div class="week-day" data-day="T">
+          <span class="day-label">T</span>
+          <span class="day-mark" aria-hidden="true">●</span>
+        </div>
+        <div class="week-day" data-day="W">
+          <span class="day-label">W</span>
+          <span class="day-mark" aria-hidden="true">●</span>
+        </div>
+        <div class="week-day" data-day="Th">
+          <span class="day-label">Th</span>
+          <span class="day-mark" aria-hidden="true">●</span>
+        </div>
+        <div class="week-day" data-day="F">
+          <span class="day-label">F</span>
+          <span class="day-mark" aria-hidden="true">●</span>
+        </div>
+        <div class="week-day" data-day="S">
+          <span class="day-label">S</span>
+          <span class="day-mark" aria-hidden="true">●</span>
+        </div>
+        <div class="week-day" data-day="Su">
+          <span class="day-label">Su</span>
+          <span class="day-mark" aria-hidden="true">●</span>
+        </div>
+      </section>
+
+      <p id="visit-msg" class="visit-msg" aria-live="polite"></p>
+
+      <div class="sr-only" aria-hidden="true">
+        <span id="longest-streak">0</span>
+        <span id="total-checkins">0</span>
+        <span id="last-checkin-date">Never</span>
+      </div>
+    </div>
+
+    <script src="streak.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

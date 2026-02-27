@@ -1,0 +1,157 @@
+/* ── Reset & base ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #e8edf5;
+  color: #1a202c;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Layout container ─────────────────────────────────────── */
+.container {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  padding: 2.5rem 2.5rem 3rem;
+  width: 100%;
+  max-width: 640px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #e55a00;
+}
+
+/* ── Stat cards ───────────────────────────────────────────── */
+.stats {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: #fff8f0;
+  border: 2px solid #ffd7b5;
+  border-radius: 14px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+  flex: 1;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  color: #718096;
+  margin-bottom: 0.6rem;
+}
+
+.stat-value {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #e55a00;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-unit {
+  font-size: 0.8rem;
+  color: #a0aec0;
+}
+
+/* ── Visit status message ─────────────────────────────────── */
+.visit-msg {
+  font-size: 0.95rem;
+  min-height: 1.4em;
+  color: #2d7a2d;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Last check-in ────────────────────────────────────────── */
+.last-checkin {
+  font-size: 0.875rem;
+  color: #718096;
+  margin-top: 1.5rem;
+}
+
+/* ── Streak animation ─────────────────────────────────────── */
+@keyframes popIn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.stat-value.pop {
+  animation: popIn 0.35s ease;
+}
+
+/* ── Weekly strip ─────────────────────────────────────────── */
+.week-strip {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.week-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 32px;
+  color: #5c6a79;
+  font-weight: 600;
+}
+
+.day-label {
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+.day-mark {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #cfd6de;
+}
+
+.week-day.checked .day-mark {
+  color: #ff8a00;
+  text-shadow: 0 1px 6px rgba(255, 138, 0, 0.35);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
