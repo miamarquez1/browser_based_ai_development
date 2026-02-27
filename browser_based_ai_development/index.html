@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,34 +8,54 @@
   </head>
   <body>
     <div class="container">
-      <h1>🔥 Streak Counter</h1>
+      <section class="streak-hero" aria-label="Current streak">
+        <span class="hero-flame" aria-hidden="true">🔥</span>
+        <h1 class="hero-title">
+          <span id="current-streak">1</span> day Streak! Keep the Wheel Spinning
+        </h1>
+      </section>
 
-      <div class="stats">
-        <div class="stat-card">
-          <span class="stat-label">Current Streak</span>
-          <span class="stat-value" id="current-streak">0</span>
-          <span class="stat-unit">days</span>
+      <section class="week-strip" aria-label="Weekly streak progress">
+        <div class="week-day" data-day="M">
+          <span class="day-label">M</span>
+          <span class="day-mark" aria-hidden="true">●</span>
         </div>
-        <div class="stat-card">
-          <span class="stat-label">Longest Streak</span>
-          <span class="stat-value" id="longest-streak">0</span>
-          <span class="stat-unit">days</span>
+        <div class="week-day" data-day="T">
+          <span class="day-label">T</span>
+          <span class="day-mark" aria-hidden="true">●</span>
         </div>
-        <div class="stat-card">
-          <span class="stat-label">Total Check-ins</span>
-          <span class="stat-value" id="total-checkins">0</span>
-          <span class="stat-unit">days</span>
+        <div class="week-day" data-day="W">
+          <span class="day-label">W</span>
+          <span class="day-mark" aria-hidden="true">●</span>
         </div>
-      </div>
+        <div class="week-day" data-day="Th">
+          <span class="day-label">Th</span>
+          <span class="day-mark" aria-hidden="true">●</span>
+        </div>
+        <div class="week-day" data-day="F">
+          <span class="day-label">F</span>
+          <span class="day-mark" aria-hidden="true">●</span>
+        </div>
+        <div class="week-day" data-day="S">
+          <span class="day-label">S</span>
+          <span class="day-mark" aria-hidden="true">●</span>
+        </div>
+        <div class="week-day" data-day="Su">
+          <span class="day-label">Su</span>
+          <span class="day-mark" aria-hidden="true">●</span>
+        </div>
+      </section>
 
       <p id="visit-msg" class="visit-msg" aria-live="polite"></p>
 
-      <div class="last-checkin">
-        <span>Last check-in: </span>
+      <div class="sr-only" aria-hidden="true">
+        <span id="longest-streak">0</span>
+        <span id="total-checkins">0</span>
         <span id="last-checkin-date">Never</span>
       </div>
     </div>
 
     <script src="streak.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
